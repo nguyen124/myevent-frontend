@@ -39,7 +39,7 @@
 
 		function updateUser(user) {
 			var deferred = $q.defer();
-			$http.put(REST_SERVICE_URI + user.accountNo, user).then(function(response) {
+			$http.put(REST_SERVICE_URI + user.id, user).then(function(response) {
 				deferred.resolve(response.data);
 			}, function(err) {
 				console.log('Error while updating user');
@@ -48,9 +48,9 @@
 			return deferred.promise;
 		}
 
-		function deleteUser(accountNo) {
+		function deleteUser(id) {
 			var deferred = $q.defer();
-			$http.delete(REST_SERVICE_URI + accountNo).then(function(response){
+			$http.delete(REST_SERVICE_URI + id).then(function(response){
 				deferred.resolve(response.data);
 			}, function(err){
 				console.log('Error while deleting user');

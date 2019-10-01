@@ -5,7 +5,7 @@
 		var self = this;
 
 		self.user = {
-			accountNo : null,
+			id : null,
 			accountHolderName : '',
 			balance : '',
 			dob : '',
@@ -36,15 +36,15 @@
 					});
 		}
 
-		function updateUser(accountNo) {
+		function updateUser(id) {
 			UserService.updateUser(self.user).then(fetchAllUsers,
 					function(errResponse) {
 						console.error('Error while updating User');
 					});
 		}
 
-		function deleteUser(accountNo) {
-			UserService.deleteUser(accountNo).then(fetchAllUsers,
+		function deleteUser(id) {
+			UserService.deleteUser(id).then(fetchAllUsers,
 					function(errResponse) {
 						console.error('Error while deleting User');
 					});
@@ -59,10 +59,11 @@
 			reset();
 		}
 
-		function edit(accountNo) {
-			console.log('accountNo to be edited', accountNo);
+		function edit(id) {
+			console.log('id to be edited', id);
 			for (var i = 0; i < self.users.length; i++) {
-				if (self.users[i].accountNo === accountNo) {
+				if (self.users[i].id === id) {
+					self.user = {};
 					self.user = angular.copy(self.users[i]);
 					self.actionValue = 'Update';
 					console.log("actionValue: " + self.actionValue);
@@ -71,17 +72,17 @@
 			}
 		}
 
-		function remove(accountNo) {
-			console.log('accountNo to be deleted', accountNo);
-			if (self.user.accountNo === accountNo) {
+		function remove(id) {
+			console.log('id to be deleted', id);
+			if (self.user.id === id) {
 				reset();
 			}
-			deleteUser(accountNo);
+			deleteUser(id);
 		}
 
 		function reset() {
 			self.user = {
-				accountNo : null,
+				id : null,
 				accountHolderName : '',
 				balance : '',
 				dob : '',
