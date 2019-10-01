@@ -31,7 +31,7 @@
 		<table border="1" width="100%">
 			<thead>
 				<tr>
-					<th><spring:message code="lbl.accountNo"></spring:message></th>
+					<th><spring:message code="lbl.id"></spring:message></th>
 					<th><spring:message code="lbl.accountHolderName"></spring:message></th>
 					<th><spring:message code="lbl.balance"></spring:message></th>
 					<th>&nbsp;</th>
@@ -41,13 +41,13 @@
 			<tbody>
 				<c:forEach var="account" items="${accounts}">
 					<c:url var="updateLink" value="/edit">
-						<c:param name="accountNo" value="${account.accountNo}" />
+						<c:param name="id" value="${account.id}" />
 					</c:url>
 					<c:url var="deleteLink" value="/delete">
-						<c:param name="accountNo" value="${account.accountNo}" />
+						<c:param name="id" value="${account.id}" />
 					</c:url>
 					<tr>
-						<td>${account.accountNo}</td>
+						<td>${account.id}</td>
 						<td>${account.accountHolderName}</td>
 						<td>${account.balance}</td>
 						<td><a href="${updateLink}">Edit</a></td>

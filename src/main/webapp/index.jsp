@@ -14,7 +14,7 @@
 <body ng-app="myApp" class="ng-cloak">
 
 	<div class="container">
-		<h2 class="text-muted">Glegoo</h2>
+		<h2 class="text-muted">My Event</h2>
 	</div>
 
 	<div class="container" ng-controller="UserController as ctrl">
@@ -29,26 +29,6 @@
 				<form ng-submit="ctrl.submit()" name="myForm"
 					class="form-horizontal">
 					<input type="hidden" ng-model="ctrl.user.id" />
-					<div class="row">
-						<div class="form-group col-md-12">
-							<label class="col-md-2 control-label" for="accountNo">Account
-								Number</label>
-							<div class="col-md-7">
-								<input type="text" ng-model="ctrl.user.accountNo" id="accountNo"
-									class="form-control input-sm"
-									placeholder="Enter account number" required />
-
-								<div class="has-error" ng-show="myForm.$dirty">
-									<div ng-show="myForm.accountNo.$error.required">This is a
-										required field</div>
-									<div ng-show="myForm.accountNo.$error.minlength">Minimum
-										required is 3</div>
-									<div ng-show="myForm.accountNo.$invalid">This field is
-										valid</div>
-								</div>
-							</div>
-						</div>
-					</div>
 
 					<div class="row">
 						<div class="form-group col-md-12">
@@ -153,9 +133,9 @@
 							<td><div ng-bind="u.dob"></div></td>
 							<td><div ng-bind="u.psCode"></div></td>
 							<td>
-								<button type="button" ng-click="ctrl.edit(u.accountNo)"
+								<button type="button" ng-click="ctrl.edit(u.id)"
 									class="btn btn-success custom-width">Edit</button>
-								<button type="button" ng-click="ctrl.remove(u.accountNo)"
+								<button type="button" ng-click="ctrl.remove(u.id)"
 									class="btn btn-danger custom-width">Remove</button>
 							</td>
 						</tr>

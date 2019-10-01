@@ -25,11 +25,6 @@
 		<form:form action="saveAccount" modelAttribute="account" method="POST">
 			<table>
 				<tr>
-					<td><spring:message code="lbl.accountNo" /></td>
-					<td><form:input path="accountNo" size="30" /> <form:errors
-							path="accountNo" cssClass="error" /></td>
-				</tr>
-				<tr>
 					<td><spring:message code="lbl.accountHolderName" /></td>
 					<td><form:input path="accountHolderName" size="30" /> <form:errors
 							path="accountHolderName" cssClass="error" /></td>
@@ -51,7 +46,7 @@
 				</tr>
 				<tr>
 					<c:choose>
-						<c:when test="${account.accountNo == null }">
+						<c:when test="${account.id == null }">
 							<td colspan="2"><input type="submit" value="Create"
 								name="btnSubmit" /></td>
 						</c:when>
