@@ -1,7 +1,7 @@
 'use strict';
 
 (function(module) {
-	var controller = function($scope, EventService) {
+	var controller = function($scope, EventService, $location) {
 		var self = this;
 
 		self.event = {
@@ -45,6 +45,19 @@
 						console.error('Error while deleting Event');
 					});
 		}
+
+		self.addEvent = function() {
+			$location.url('/events/create');
+		}
+		self.saveEvent = function() {
+			EventService.createOrUpdateEvent(self.event).then(function() {
+				fetchAllEvents();
+				$location.url('/events');
+			}, function(err) {
+				console.error('Error while creating new event');
+			})
+		}
 	};
 	module.controller('EventController', controller);
+
 }(angular.module('myApp')));

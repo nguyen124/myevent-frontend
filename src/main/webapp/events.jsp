@@ -1,4 +1,7 @@
 <div ng-controller="EventController as ctrl">
+	<div class="well hoverwell thumbnail">
+		<button ng-click="ctrl.addEvent()">Add Event</button>
+	</div>
 	<div ng-repeat="event in ctrl.events">
 		<div class="well hoverwell thumbnail">
 			<img class="thumbnail-image" src="{{event.imageUrl}}"

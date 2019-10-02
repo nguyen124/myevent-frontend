@@ -7,9 +7,10 @@
 			templateUrl : "hello.jsp"
 		}).when("/events", {
 			templateUrl : "events.jsp"
+		}).when("/events/create", {
+			templateUrl : "create-event.jsp"
 		}).when("/events/:id", {
-			templateUrl : "event-details.jsp",
-			controller: "EventDetailsController"
+			templateUrl : "event-details.jsp"
 		}).when("/accounts", {
 			templateUrl : "accounts.jsp"
 		});
