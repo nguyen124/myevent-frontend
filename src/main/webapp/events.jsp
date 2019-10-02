@@ -2,7 +2,7 @@
 	<div ng-repeat="event in ctrl.events">
 		<div class="well hoverwell thumbnail">
 			<img class="thumbnail-image" src="{{event.imageUrl}}"
-				alt="event.name">
+				alt="{{event.name}}">
 
 			<div class="row">
 				<div class="col-md-11">
