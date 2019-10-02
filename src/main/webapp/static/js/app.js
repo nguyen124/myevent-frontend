@@ -8,7 +8,8 @@
 		}).when("/events", {
 			templateUrl : "events.jsp"
 		}).when("/events/:id", {
-			templateUrl : "event-details.jsp"
+			templateUrl : "event-details.jsp",
+			controller: "EventDetailsController"
 		}).when("/accounts", {
 			templateUrl : "accounts.jsp"
 		});

@@ -15,3 +15,5 @@
 <script src="<c:url value='static/js/controller/user_controller.js' />"></script>
 <script src="<c:url value='static/js/service/event_service.js' />"></script>
 <script src="<c:url value='static/js/controller/event_controller.js' />"></script>
+<script
+	src="<c:url value='static/js/controller/event-details_controller.js' />"></script>

@@ -23,13 +23,15 @@
 
 		function getAnEvent(eventId) {
 			var deferred = $q.defer();
-			$http.get(RES_SERVICE_URI+"/"+eventId).then(function(response){
+			$http.get(REST_SERVICE_URI+"/"+eventId).then(function(response){
 				deferred.resolve(response.data);
 			}, function(err){
 				console.log('Error while get an event');
 				deferred.reject(err);
 			})
+			return deferred.promise;
 		}
+		
 		function createOrUpdateEvent(event) {
 			var deferred = $q.defer();
 			$http.post(REST_SERVICE_URI, event).then(function(response) {

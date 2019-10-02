@@ -1,4 +1,4 @@
-<div ng-controller="EventController as ctrl">
+<div ng-controller="EventDetailsController as ctrl">
 
 	<img class="ctrl.event-image" src="{{ctrl.event.imageUrl}}"
 		alt="{{ctrl.event.name}}">
