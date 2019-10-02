@@ -5,10 +5,12 @@
 	app.config(function($routeProvider) {
 		$routeProvider.when("/", {
 			templateUrl : "hello.jsp"
+		}).when("/events", {
+			templateUrl : "events.jsp"
 		}).when("/events/:id", {
 			templateUrl : "event-details.jsp"
-		}).when("/account", {
-			templateUrl : "account.jsp"
+		}).when("/accounts", {
+			templateUrl : "accounts.jsp"
 		});
 	});
 }());
