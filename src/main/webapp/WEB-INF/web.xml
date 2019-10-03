@@ -15,6 +15,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/servlet-config.xml
+			/WEB-INF/afsSecurity.xml
 		</param-value>
 	</context-param>
 
