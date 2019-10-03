@@ -72,7 +72,7 @@
 		</div>
 
 		<button type="submit" class="btn btn-primary" value="Submit">Save</button>
-		<button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+		<button type="button" class="btn btn-default" ng-click="ctrl.cancel()">Cancel</button>
 	</form>
 
 </div>

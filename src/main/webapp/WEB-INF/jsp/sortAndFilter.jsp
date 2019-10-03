@@ -26,3 +26,17 @@
 	<button class="btn btn-primary" ng-click="ctrl.addSession()">
 		Add Session</button>
 </div>
+
+
+<div class="row" ng-if="ctrl.event.eventSessions"
+	ng-repeat="session in ctrl.event.eventSessions">
+	<div class="col-md-10">
+		<div class="well">{{session.name}}</div>
+		<div>
+			<h6>{{session.presenter}}</h6>
+			<span>Duration: {{session.duration}}</span><br /> <span>Level:
+				{{session.level}}</span>
+			<p>Abstraction: {{session.abstraction}}</p>
+		</div>
+	</div>
+</div>

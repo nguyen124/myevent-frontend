@@ -6,7 +6,8 @@
 			fetchAllEvents : fetchAllEvents,
 			getAnEvent : getAnEvent,
 			createOrUpdateEvent : createOrUpdateEvent,
-			deleteEvent : deleteEvent
+			deleteEvent : deleteEvent,
+			saveSession : saveSession
 		}
 		return factory;
 
@@ -49,6 +50,16 @@
 				deferred.resolve(response.data);
 			}, function(err){
 				console.log('Error while deleting event');
+				deferred.reject(err);
+			});
+			return deferred.promise;
+		}
+		
+		function saveSession(id, session){
+			var deferred = $q.defer();
+			$http.post(REST_SERVICE_URI + "/" +id + "/sessions", session).then(function(response){
+				deferred.resolve(response.data);
+			}, function(err){
 				deferred.reject(err);
 			});
 			return deferred.promise;

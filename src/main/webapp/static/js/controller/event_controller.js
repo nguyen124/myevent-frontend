@@ -49,6 +49,11 @@
 		self.addEvent = function() {
 			$location.url('/events/create');
 		}
+
+		self.cancel = function() {
+			$location.url('/events/');
+		}
+		
 		self.saveEvent = function() {
 			EventService.createOrUpdateEvent(self.event).then(function() {
 				fetchAllEvents();
