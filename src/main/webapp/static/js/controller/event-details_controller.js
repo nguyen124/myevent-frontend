@@ -17,7 +17,13 @@
 			onlineUrl : '',
 			eventSessions : []
 		}
+		self.session = {
+
+		}
+		self.addMode = false;
+
 		fetchUser($routeParams.id);
+
 		function fetchUser(id) {
 			EventService.getAnEvent(id).then(function(data) {
 				self.event = data;
@@ -25,7 +31,16 @@
 				console.error(err);
 			})
 		}
-	}
 
+		self.addSession = function() {
+			self.addMode = true;
+		}
+		self.cancel = function() {
+			self.addMode = false;
+		}
+		self.saveSession = function() {
+			var eventId = $routeParams.id;
+		}
+	}
 	module.controller('EventDetailsController', controller)
 }(angular.module('myApp')))
