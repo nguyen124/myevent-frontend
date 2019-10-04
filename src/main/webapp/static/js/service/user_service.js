@@ -3,7 +3,7 @@
 (function(module) {
 	var userService = function($http, $q) {
 
-		var REST_SERVICE_URI = 'http://localhost:8080/MyApp/accounts/';
+		var REST_SERVICE_URI = 'http://localhost:8080/MyEventFrontEnd/accounts/';
 
 		var factory = {
 			fetchAllUsers : fetchAllUsers,

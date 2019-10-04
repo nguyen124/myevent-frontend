@@ -1,7 +1,7 @@
 'use strict';
 (function(module) {
 	var eventService = function($http, $q) {
-		var REST_SERVICE_URI = 'http://localhost:8080/MyApp/events';
+		var REST_SERVICE_URI = 'http://localhost:8080/MyEventFrontEnd/events';
 		var factory = {
 			fetchAllEvents : fetchAllEvents,
 			getAnEvent : getAnEvent,

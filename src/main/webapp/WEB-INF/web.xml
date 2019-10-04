@@ -2,7 +2,8 @@
 
 <web-app version="3.1" xmlns="http://java.sun.com/xml/ns/j2ee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd">
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd">
 	<display-name>Event Front End</display-name>
 
 	<listener>
@@ -15,7 +16,6 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/servlet-config.xml
-			/WEB-INF/afsSecurity.xml
 		</param-value>
 	</context-param>
 
@@ -29,6 +29,7 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>SpringController</servlet-name>
 		<url-pattern>/</url-pattern>
