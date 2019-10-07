@@ -7,7 +7,7 @@ public interface EventRestTemplate {
 
 	Event getEvent(Long id);
 
-	void saveOrUpdateEvent(Event event);
+	boolean saveOrUpdateEvent(Event event);
 
-	void deleteEvent(Long id);
+	int deleteEvent(Long id);
 }

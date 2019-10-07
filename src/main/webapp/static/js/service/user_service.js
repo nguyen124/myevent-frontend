@@ -39,7 +39,7 @@
 
 		function updateUser(user) {
 			var deferred = $q.defer();
-			$http.put(REST_SERVICE_URI + user.id, user).then(function(response) {
+			$http.put(REST_SERVICE_URI, user).then(function(response) {
 				deferred.resolve(response.data);
 			}, function(err) {
 				console.log('Error while updating user');

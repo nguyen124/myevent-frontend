@@ -1,5 +1,6 @@
 package com.afs.factory;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class RestTemplateFactory {
 		List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
 		MappingJackson2HttpMessageConverter jsonConverter = new MappingJackson2HttpMessageConverter();
 		ObjectMapper objectMapper = new ObjectMapper();
+		SimpleDateFormat df = new SimpleDateFormat("mm/dd/yyyy");
+		objectMapper.setDateFormat(df);
 		jsonConverter.setObjectMapper(objectMapper);
 		messageConverters.add(jsonConverter);
 		restTemplate.setMessageConverters(messageConverters);

@@ -1,7 +1,7 @@
 'use strict';
 (function(module) {
 	var eventService = function($http, $q) {
-		var REST_SERVICE_URI = 'http://localhost:8080/MyEventFrontEnd/events';
+		var REST_SERVICE_URI = 'http://localhost:8080/MyEventFrontEnd/events/';
 		var factory = {
 			fetchAllEvents : fetchAllEvents,
 			getAnEvent : getAnEvent,
@@ -24,7 +24,7 @@
 
 		function getAnEvent(eventId) {
 			var deferred = $q.defer();
-			$http.get(REST_SERVICE_URI+"/"+eventId).then(function(response){
+			$http.get(REST_SERVICE_URI + eventId).then(function(response){
 				deferred.resolve(response.data);
 			}, function(err){
 				console.log('Error while get an event');
@@ -46,7 +46,7 @@
 		
 		function deleteEvent(id){
 			var deferred = $q.defer();
-			$http.delete(REST_SERVICE_URI +id).then(function(response){
+			$http.delete(REST_SERVICE_URI + id).then(function(response){
 				deferred.resolve(response.data);
 			}, function(err){
 				console.log('Error while deleting event');
@@ -57,7 +57,7 @@
 		
 		function saveSession(id, session){
 			var deferred = $q.defer();
-			$http.post(REST_SERVICE_URI + "/" +id + "/sessions", session).then(function(response){
+			$http.post(REST_SERVICE_URI +id + "/sessions", session).then(function(response){
 				deferred.resolve(response.data);
 			}, function(err){
 				deferred.reject(err);
