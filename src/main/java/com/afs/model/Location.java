@@ -1,7 +1,10 @@
 package com.afs.model;
 
-public class Location {
+import java.io.Serializable;
 
+public class Location implements Serializable {
+
+	private static final long serialVersionUID = -1196330908771173762L;
 	private Long id;
 	private String address;
 	private String city;

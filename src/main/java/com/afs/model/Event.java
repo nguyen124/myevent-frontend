@@ -1,11 +1,12 @@
 package com.afs.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import com.afs.model.EventSession;
 
-public class Event {
+public class Event implements Serializable {
 
+	private static final long serialVersionUID = -7546247232988073419L;
 	private Long id;
 	private String name;
 	private Date date;

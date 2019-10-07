@@ -1,7 +1,10 @@
 package com.afs.model;
 
-public class EventSession {
+import java.io.Serializable;
 
+public class EventSession implements Serializable {
+
+	private static final long serialVersionUID = -2368250618600266828L;
 	private Long id;
 	private String name;
 	private String presenter;
