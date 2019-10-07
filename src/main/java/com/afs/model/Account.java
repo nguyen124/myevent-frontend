@@ -2,6 +2,8 @@ package com.afs.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Account {
 
 	private Long id;
@@ -10,6 +12,7 @@ public class Account {
 
 	private Integer balance;
 
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date dob;
 
 	private String psCode;

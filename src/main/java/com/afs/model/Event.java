@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Event implements Serializable {
 
 	private static final long serialVersionUID = -7546247232988073419L;
 	private Long id;
 	private String name;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date date;
 	private String time;
 	private Float price;
