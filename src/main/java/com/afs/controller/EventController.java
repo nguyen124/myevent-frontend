@@ -32,14 +32,9 @@ public class EventController {
 	}
 
 	@RequestMapping(value = "/events", method = RequestMethod.POST)
-	public ResponseEntity<Boolean> saveEvent(@RequestBody Event event, BindingResult result) {
+	public ResponseEntity<Boolean> saveEvent(@RequestBody Event event) {
 		eventService.saveOrUpdateEvent(event);
-		if (result.hasErrors()) {
-			System.out.println("Has error return newEvent");
-			return new ResponseEntity<Boolean>(false, HttpStatus.INTERNAL_SERVER_ERROR);
-		} else {
-			return new ResponseEntity<Boolean>(true, HttpStatus.OK);
-		}
+		return new ResponseEntity<Boolean>(false, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	@RequestMapping(value = "/events/{id}", method = RequestMethod.DELETE)
